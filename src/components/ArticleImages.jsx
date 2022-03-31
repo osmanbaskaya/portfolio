@@ -72,8 +72,6 @@ const ImageMarked = styled('span')(({ theme }) => ({
 export default function ArticleImages(props) {
   return (
     <Box
-      marginTop="1rem"
-      // gap={2}
       justifyContent="space-between"
       sx={{ display: 'flex', flexWrap: 'wrap', width: '100%' }}
     >
@@ -82,8 +80,9 @@ export default function ArticleImages(props) {
           //   focusRipple
           key={article.title}
           style={{
-            width: '400px',
+            width: '380px',
             marginBottom: '50px',
+            marginLeft: '5px',
           }}
         >
           <ImageSrc style={{ backgroundImage: `url(${article.url})` }} />

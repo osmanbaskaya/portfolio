@@ -15,7 +15,7 @@ export default function Home() {
           marginBottom: '1em',
         }}
       >
-        <Chip label="WORK" size="20" />
+        <Chip label="WORK" sx={{ fontSize: 'large' }} />
       </Divider>
       <Work></Work>
       <Divider
@@ -26,7 +26,7 @@ export default function Home() {
           marginBottom: '1em',
         }}
       >
-        <Chip label="RESEARCH" size="20" />
+        <Chip label="RESEARCH" sx={{ fontSize: 'large' }} />
       </Divider>
       <Articles />
     </>

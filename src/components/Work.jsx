@@ -4,7 +4,7 @@ import { Box, Chip, Grid, IconButton, Stack, Typography } from '@mui/material'
 function Section(props) {
   return (
     <Box width="100%">
-      <Grid container justifyContent="left">
+      <Grid container justifyContent="space-between">
         <Grid item md={6}>
           <Box sx={{ display: 'flex', alignItems: 'center' }} width="100%">
             <Box
@@ -20,11 +20,16 @@ function Section(props) {
           </Box>
           <Stack direction="row" spacing={1}>
             {props.roles.map((role, index) => (
-              <Chip label={role} key={index} variant="outlined" />
+              <Chip
+                label={role}
+                sx={{ fontSize: 'large' }}
+                key={index}
+                variant="outlined"
+              />
             ))}
           </Stack>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={5}>
           <Stack direction="column">
             <Typography variant="h5">{props.description}</Typography>
             <IconButton
@@ -59,7 +64,7 @@ export default function Work() {
             Natural Language Understanding engine and new Autopilot Actions API
             to help you effectively classify customer issues with sophisticated
             self-service workflows."
-        roles={['Engineering Manager', 'Machine Learning Engineer']}
+        roles={['Natural Language Understanding', 'Chat bots']}
       ></Section>
     </Box>
   )
