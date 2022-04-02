@@ -79,8 +79,8 @@ export default function Articles() {
         <Grid item flex="1">
           <Typography variant="h3">Research Articles</Typography>
           <Typography variant="subtitle1" sx={{ fontStyle: 'italic' }}>
-            Articles related to Machine Learning, Natural Language Programming,
-            and Recommender Systems
+            Articles related to Machine Learning, Natural Language Processing,
+            Recommender Systems, and Medical Image Processing.
           </Typography>
         </Grid>
         {/* <Grid item flex="1">

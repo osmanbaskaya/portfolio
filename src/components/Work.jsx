@@ -89,7 +89,7 @@ export default function Work() {
       <Section
         title="Twilio Autopilot"
         short="Omnichannel AI assistant"
-        description="I manage the team responsible for Twilio Autopilot with three different aspects: Engineering, People, and Product."
+        description="I manage a team responsible for Twilio Autopilot. Currently, I am an engineering manager who often wears product manager and tech lead hats."
         roles={['Natural Language Understanding', 'Chat bots']}
       ></Section>
     </Box>
