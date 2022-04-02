@@ -2,7 +2,6 @@ import { Box, Grid, Typography } from '@mui/material'
 import { keyframes } from '@mui/system'
 import * as React from 'react'
 import { styled } from '@mui/material/styles'
-import Paper from '@mui/material/Paper'
 
 const move = keyframes`
  
@@ -20,13 +19,22 @@ const move = keyframes`
   //  }
 `
 
+const HeroTypography = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.down('md')]: {
+    fontSize: '1.5rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '2.125rem',
+  },
+}))
+
 export default function Hero() {
   return (
     <Box sx={{ flex: 1 }}>
       <Grid
         container
         alignItems="center"
-        sx={{ justifyContent: { xs: 'center', md: 'space-between' } }}
+        sx={{ justifyContent: { xs: 'center', md: 'space-around' } }}
       >
         <Grid item xs={5}>
           <Box
@@ -34,16 +42,22 @@ export default function Hero() {
             sx={{
               overflow: ' hidden',
               maxHeight: { xs: 300, md: 400 },
-              maxWidth: { xs: '100%', md: '100%' },
+              maxWidth: { xs: '100%' },
             }}
             alt="Hero"
             src="assets/img/hero7.png"
           />
         </Grid>
-        <Grid item xs={5} minWidth="350px">
-          <Typography variant="h4" marginBottom="1rem">
+        <Grid
+          item
+          xs={5}
+          sx={{
+            minWidth: { sm: '350px', xs: '250px' },
+          }}
+        >
+          <HeroTypography marginBottom="1rem">
             Hello! I'm Osman, an
-          </Typography>
+          </HeroTypography>
 
           <Box height={50} overflow={'hidden'} mb="1rem">
             <Box
@@ -53,15 +67,11 @@ export default function Hero() {
               color={'green'}
               textAlign={'left'}
             >
-              <Typography variant="h4" height="50px">
-                Engineering Manager
-              </Typography>
-              <Typography variant="h4" height="50px">
-                ML Expert
-              </Typography>
+              <HeroTypography height="50px">Engineering Manager</HeroTypography>
+              <HeroTypography height="50px">ML Expert</HeroTypography>
             </Box>
           </Box>
-          <Typography variant="h4">based in San Francisco!</Typography>
+          <HeroTypography> based in San Francisco.</HeroTypography>
         </Grid>
       </Grid>
     </Box>

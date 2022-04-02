@@ -15,7 +15,11 @@ export default function Home() {
           marginBottom: '1em',
         }}
       >
-        <Chip label="WORK" sx={{ fontSize: 'large' }} />
+        <Chip
+          id={'work'}
+          label="WORK"
+          style={{ fontSize: 'large', scrollMarginTop: '5rem' }}
+        />
       </Divider>
       <Work></Work>
       <Divider
@@ -26,7 +30,11 @@ export default function Home() {
           marginBottom: '1em',
         }}
       >
-        <Chip label="RESEARCH" sx={{ fontSize: 'large' }} />
+        <Chip
+          id="research"
+          label="RESEARCH"
+          style={{ fontSize: 'large', scrollMarginTop: '5rem' }}
+        />
       </Divider>
       <Articles />
     </>

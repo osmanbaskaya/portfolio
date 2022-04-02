@@ -78,6 +78,8 @@ export default function ArticleImages(props) {
       {props.articles.map((article) => (
         <ImageButton
           //   focusRipple
+          component="a"
+          href={article.url}
           key={article.title}
           style={{
             width: '380px',
@@ -85,7 +87,7 @@ export default function ArticleImages(props) {
             marginLeft: '5px',
           }}
         >
-          <ImageSrc style={{ backgroundImage: `url(${article.url})` }} />
+          <ImageSrc style={{ backgroundImage: `url(${article.img})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
           <Image>
             <Typography
@@ -93,6 +95,7 @@ export default function ArticleImages(props) {
               variant="h6"
               color="white"
               backgroundColor="black"
+              textAlign={'center'}
               sx={{
                 position: 'relative',
                 opacity: '60%',

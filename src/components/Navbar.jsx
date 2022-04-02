@@ -11,14 +11,15 @@ import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 import { Link } from '@mui/material'
 
-// const pages = [
-//   { url: '#job', text: 'Home' },
-//   { url: '#job', text: 'Work' },
-//   { url: '#job', text: 'Blog' },
-//   { url: '#job', text: 'About' },
-// ]
+var pages = [
+  { url: '/', text: 'Home' },
+  { url: '#work', text: 'Work' },
+  { url: '#research', text: 'Research' },
+  { url: 'http://osmanbaskaya.github.io/', text: 'Blog' },
+  { url: '/about', text: 'About' },
+]
 
-const pages = ['Home', 'Work', 'Research', 'Blog', 'About']
+// const pages = ['Home', 'Work', 'Research', 'Blog', 'About']
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
@@ -79,10 +80,14 @@ const Navbar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page, index) => (
-                <MenuItem onClick={handleCloseNavMenu} key={index}>
-                  <Link href="#job" textAlign="center">
-                    {page}
+              {pages.map((page) => (
+                <MenuItem onClick={handleCloseNavMenu} key={page.text}>
+                  <Link
+                    href={page.url}
+                    textAlign="center"
+                    sx={{ textDecoration: 'none' }}
+                  >
+                    {page.text}
                   </Link>
                 </MenuItem>
               ))}
@@ -108,11 +113,19 @@ const Navbar = () => {
           >
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.text}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
-                {page}
+                <Typography
+                  component="a"
+                  href={page.url}
+                  textAlign="center"
+                  color="black"
+                  sx={{ textDecoration: 'none' }}
+                >
+                  {page.text}
+                </Typography>
               </Button>
             ))}
           </Box>

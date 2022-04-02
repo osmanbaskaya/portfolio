@@ -1,10 +1,10 @@
 import { Fingerprint } from '@mui/icons-material'
-import { Box, Chip, Grid, IconButton, Stack, Typography } from '@mui/material'
+import { Box, Grid, IconButton, Stack, Typography } from '@mui/material'
 
 function Section(props) {
   return (
     <Box width="100%">
-      <Grid container justifyContent="space-between">
+      <Grid container justifyContent="space-between" alignItems="center">
         <Grid item md={6}>
           <Box sx={{ display: 'flex', alignItems: 'center' }} width="100%">
             <Box
@@ -16,25 +16,45 @@ function Section(props) {
               alt="twilio"
               src="assets/img/twilio.png"
             ></Box>
-            <Typography variant="h2">{props.title}</Typography>
+            <Typography variant="h3">{props.title}</Typography>
           </Box>
-          <Stack direction="row" spacing={1}>
-            {props.roles.map((role, index) => (
-              <Chip
-                label={role}
-                sx={{ fontSize: 'large' }}
-                key={index}
-                variant="outlined"
-              />
-            ))}
-          </Stack>
+
+          <Grid container flexDirection="column">
+            {/* <Grid item marginBottom={1}>
+              {props.roles.map((role, index) => (
+                <Chip
+                  label={role}
+                  sx={{ fontSize: 'small', fontFamily: 'BIZ UDPMincho, serif' }}
+                  key={index}
+                  variant="outlined"
+                />
+              ))}
+            </Grid> */}
+
+            <Grid item>
+              <Typography variant="body1" fontStyle="italic">
+                Autopilot is Twilio’s conversational AI platform for building
+                bots, IVRs, voice assistants, and more. Autopilot combines
+                Twilio’s Natural Language Understanding engine and Autopilot
+                Actions API.
+              </Typography>
+            </Grid>
+          </Grid>
         </Grid>
         <Grid item md={5}>
           <Stack direction="column">
-            <Typography variant="h5">{props.description}</Typography>
+            <Typography
+              variant="body1"
+              fontSize="1.5rem"
+              component="p"
+              fontWeight="300"
+              fontFamily="BIZ UDPMincho, serif"
+            >
+              {props.description}
+            </Typography>
             <IconButton
               aria-label="fingerprint"
-              color="secondary"
+              // color="secondary"
               sx={{
                 '&:hover': {
                   background: 'none',
@@ -44,7 +64,17 @@ function Section(props) {
               }}
             >
               <Fingerprint />
-              <Typography variant="h5">Learn more</Typography>
+
+              <Typography
+                component="a"
+                href="https://www.twilio.com/blog/introducing-twilio-autopilot-a-conversational-ai-platform-to-build-bots-that-work"
+                variant="h6"
+                sx={{ textDecoration: 'none' }}
+                // color="green"
+                fontFamily="BIZ UDPMincho, serif"
+              >
+                Learn More.
+              </Typography>
             </IconButton>
           </Stack>
         </Grid>
@@ -55,15 +85,11 @@ function Section(props) {
 
 export default function Work() {
   return (
-    <Box id={'job'}>
+    <Box>
       <Section
         title="Twilio Autopilot"
         short="Omnichannel AI assistant"
-        description="Autopilot is Twilio’s new conversational AI platform for building
-            bots, IVRs, voice assistants, and more. Autopilot combines Twilio’s
-            Natural Language Understanding engine and new Autopilot Actions API
-            to help you effectively classify customer issues with sophisticated
-            self-service workflows."
+        description="I manage the team responsible for Twilio Autopilot with three different aspects: Engineering, People, and Product."
         roles={['Natural Language Understanding', 'Chat bots']}
       ></Section>
     </Box>

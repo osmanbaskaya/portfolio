@@ -4,15 +4,34 @@ import Typography from '@mui/material/Typography'
 import ScrollToTop from './components/ScrollToTop'
 import Layout from './components/Layout'
 import Home from './pages/Home'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
+import {
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+} from '@mui/material/styles'
 
-const theme = createTheme({
+let theme = createTheme({
   typography: {
     allVariants: {
       fontFamily: 'Lora',
     },
+    // h4: {
+    //   fontSize: '2.125rem',
+    // },
   },
 })
+
+theme = responsiveFontSizes(theme)
+
+// theme.typography.h4 = {
+//   fontSize: '1.2rem',
+//   '@media (min-width:600px)': {
+//     fontSize: '1.5rem',
+//   },
+//   [theme.breakpoints.up('md')]: {
+//     fontSize: '2rem',
+//   },
+// }
 
 export default class App extends Component {
   render() {
