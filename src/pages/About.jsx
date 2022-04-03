@@ -11,6 +11,8 @@ import {
 import React, { useEffect, useState } from 'react'
 import PreviousExperience from '../components/PreviousExperience'
 
+const goodreads_api =
+  'https://goodreads-currently-reading-klxvdojwta-uc.a.run.app'
 const learning = ['Français 🇫🇷', 'Tango Dancing', 'Product Discovery']
 const hobbies = [
   'Tennis 🎾',
@@ -46,36 +48,31 @@ export default function About() {
   const [books, setBooks] = useState([])
   const [readBooks, setReadBooks] = useState([])
   useEffect(() => {
-    fetch(
-      'http://goodreads-currently-reading-klxvdojwta-uc.a.run.app?shelf=currently-reading&k=3',
-    )
+    fetch(goodreads_api + '?shelf=currently-reading&k=3')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-
         setBooks(data)
       })
   }, [])
 
   useEffect(() => {
-    fetch(
-      'http://goodreads-currently-reading-klxvdojwta-uc.a.run.app?shelf=read&k=3',
-    )
+    fetch(goodreads_api + '?shelf=read&k=3')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         setReadBooks(data)
       })
   }, [])
 
   return (
     <Grid container spacing={4}>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={4}>
         <Paper
           sx={{
             p: 0.5,
             margin: 'auto',
-            //   flexGrow: 1,
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
             backgroundColor: (theme) =>
               theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
           }}
@@ -95,7 +92,7 @@ export default function About() {
         </Paper>
       </Grid>
 
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={8}>
         <Paper
           sx={{
             p: 1,
@@ -105,15 +102,21 @@ export default function About() {
               theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
           }}
         >
-          <Typography variant="h5">
-            Osman was born in İzmir (the city in the ) and moved to Istanbul for
-            college. He got my Computer Engineering and Mathematics degrees from
-            Bahçeşehir University. He continued his education by joining
-            Artificial Intelligence Lab at Koç University, where he focused on
-            Machine learning and Natural Language Processing. After getting my
-            Master’s degree, Osman decided on a career in the industry and
-            worked in start-ups (e.g., Seven Bridges Genomics) and big companies
-            (e.g., Huawei, Twilio).
+          <Typography variant="h6" marginBottom={1}>
+            Osman was born in İzmir (a city on the West Coast of Turkey) and
+            moved to Istanbul for college. He got his Computer Engineering and
+            Mathematics degrees from Bahçeşehir University. He continued his
+            education by joining Artificial Intelligence Lab at Koç University,
+            where he focused on Machine learning and Natural Language
+            Processing. After getting his Master’s degree, Osman decided on a
+            career in the industry and worked in start-ups (e.g., Seven Bridges
+            Genomics) and big companies (e.g., Huawei, Twilio).
+          </Typography>
+
+          <Typography variant="h6">
+            In 2016, he moved to the United States. After living in Boston for
+            one year, he moved to the Bay Area. Currently, he lives in San
+            Francisco.
           </Typography>
         </Paper>
       </Grid>
@@ -140,18 +143,16 @@ export default function About() {
       ></Divider> */}
       <Grid item xs={12} md={6}>
         <Typography variant="h4" mb={1} textAlign={'center'}>
-          What Else I Like
+          Stuff I Love
         </Typography>
 
-        <Grid container spacing={1}>
+        <Grid container spacing={1} justifyContent="center">
           {hobbies.map((hobby, index) => (
-            <Grid item>
+            <Grid item key={index}>
               <Chip
                 label={hobby}
-                key={index}
                 sx={{
                   fontSize: 'small',
-                  fontFamily: 'BIZ UDPMincho, serif',
                 }}
                 variant="outlined"
               />
@@ -161,17 +162,16 @@ export default function About() {
       </Grid>
       <Grid item xs={12} md={6}>
         <Typography variant="h4" textAlign={'center'} mb={1}>
-          What I am learning nowadays
+          Currently Learning
         </Typography>
-        <Grid container spacing={1}>
+        <Grid container spacing={1} justifyContent="center">
           {learning.map((hobby, index) => (
-            <Grid item>
+            <Grid item key={index}>
               <Chip
                 label={hobby}
-                key={index}
                 sx={{
                   fontSize: 'small',
-                  fontFamily: 'BIZ UDPMincho, serif',
+                  fontFamily: 'inherit',
                 }}
                 variant="outlined"
               />
@@ -181,7 +181,7 @@ export default function About() {
       </Grid>
       <Grid item xs={12} md={6} mb={1} textAlign={'center'}>
         <Typography variant="h4" textAlign={'center'}>
-          Books I am currently reading
+          Books: Currently Reading
         </Typography>
         <List
           sx={{
@@ -203,7 +203,7 @@ export default function About() {
         </List>
       </Grid>
       <Grid item xs={12} md={6} mb={1} textAlign={'center'}>
-        <Typography variant="h4">Books I recently finished</Typography>
+        <Typography variant="h4">Books: Recently finished</Typography>
 
         <List
           sx={{

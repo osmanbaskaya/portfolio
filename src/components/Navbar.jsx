@@ -36,13 +36,25 @@ const Navbar = () => {
     <AppBar position="sticky" sx={{ backgroundColor: 'white' }}>
       <Container>
         <Toolbar disableGutters>
+          <Box
+            component="img"
+            mr={1}
+            sx={{
+              maxWidth: '50px',
+              maxHeight: '100%',
+            }}
+            alt="logo"
+            src="assets/img/logo2.png"
+          />
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex', color: 'black' } }}
           >
-            Osman Başkaya
+            <Link href="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
+              Osman Başkaya
+            </Link>
           </Typography>
 
           <Box
@@ -81,18 +93,18 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem onClick={handleCloseNavMenu} key={page.text}>
-                  <Link
-                    href={page.url}
-                    textAlign="center"
-                    sx={{ textDecoration: 'none' }}
-                  >
-                    {page.text}
-                  </Link>
-                </MenuItem>
+                <Link
+                  href={page.url}
+                  textAlign="center"
+                  key={page.text}
+                  sx={{ textDecoration: 'none' }}
+                >
+                  <MenuItem onClick={handleCloseNavMenu}>{page.text}</MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
+
           <Typography
             variant="h6"
             noWrap
@@ -102,7 +114,9 @@ const Navbar = () => {
               display: { xs: 'flex', md: 'none', color: 'black' },
             }}
           >
-            Osman Başkaya
+            <Link href="/" sx={{ textDecoration: 'none' }}>
+              Osman Başkaya
+            </Link>
           </Typography>
           <Box
             sx={{
@@ -114,12 +128,12 @@ const Navbar = () => {
             {pages.map((page) => (
               <Button
                 key={page.text}
+                component="a"
+                href={page.url}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
                 <Typography
-                  component="a"
-                  href={page.url}
                   textAlign="center"
                   color="black"
                   sx={{ textDecoration: 'none' }}
