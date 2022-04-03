@@ -4,6 +4,8 @@ import Typography from '@mui/material/Typography'
 import ScrollToTop from './components/ScrollToTop'
 import Layout from './components/Layout'
 import Home from './pages/Home'
+import About from './pages/About'
+
 import {
   ThemeProvider,
   createTheme,
@@ -38,7 +40,7 @@ export default class App extends Component {
     let routes = (
       <Routes>
         <Route path="/" element={<Home></Home>} />
-        <Route path="/about" element={<Typography></Typography>} />
+        <Route path="/about" element={<About></About>} />
         <Route
           path="*"
           element={

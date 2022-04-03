@@ -1,5 +1,5 @@
 import { Fingerprint } from '@mui/icons-material'
-import { Box, Grid, IconButton, Stack, Typography } from '@mui/material'
+import { Box, Grid, IconButton, Paper, Stack, Typography } from '@mui/material'
 
 function Section(props) {
   return (
@@ -42,41 +42,52 @@ function Section(props) {
           </Grid>
         </Grid>
         <Grid item md={5}>
-          <Stack direction="column">
-            <Typography
-              variant="body1"
-              fontSize="1.5rem"
-              component="p"
-              fontWeight="300"
-              fontFamily="BIZ UDPMincho, serif"
-            >
-              {props.description}
-            </Typography>
-            <IconButton
-              aria-label="fingerprint"
-              // color="secondary"
-              sx={{
-                '&:hover': {
-                  background: 'none',
-                  color: '#b09191',
-                  // opacity: [0.9],
-                },
-              }}
-            >
-              <Fingerprint />
-
+          <Paper
+            sx={{
+              m: 0.5,
+              p: 1,
+              margin: 'auto',
+              //   flexGrow: 1,
+              backgroundColor: (theme) =>
+                theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+            }}
+          >
+            <Stack direction="column">
               <Typography
-                component="a"
-                href="https://www.twilio.com/blog/introducing-twilio-autopilot-a-conversational-ai-platform-to-build-bots-that-work"
-                variant="h6"
-                sx={{ textDecoration: 'none' }}
-                // color="green"
+                variant="body1"
+                fontSize="1.5rem"
+                component="p"
+                fontWeight="300"
                 fontFamily="BIZ UDPMincho, serif"
               >
-                Learn More.
+                {props.description}
               </Typography>
-            </IconButton>
-          </Stack>
+              <IconButton
+                aria-label="fingerprint"
+                // color="secondary"
+                sx={{
+                  '&:hover': {
+                    background: 'none',
+                    color: '#b09191',
+                    // opacity: [0.9],
+                  },
+                }}
+              >
+                <Fingerprint />
+
+                <Typography
+                  component="a"
+                  href="https://www.twilio.com/blog/introducing-twilio-autopilot-a-conversational-ai-platform-to-build-bots-that-work"
+                  variant="h6"
+                  sx={{ textDecoration: 'none' }}
+                  // color="green"
+                  fontFamily="BIZ UDPMincho, serif"
+                >
+                  Learn More.
+                </Typography>
+              </IconButton>
+            </Stack>
+          </Paper>
         </Grid>
       </Grid>
     </Box>

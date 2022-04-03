@@ -83,7 +83,8 @@ export default function ArticleImages(props) {
           key={article.title}
           style={{
             width: '380px',
-            marginBottom: '50px',
+
+            marginBottom: '20px',
             marginLeft: '5px',
           }}
         >

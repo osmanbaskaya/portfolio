@@ -4,10 +4,13 @@ export default function Footer() {
   return (
     <footer>
       <Box
-        marginTop={'auto'}
-        spacing={1}
-        p={'1em'}
+        // marginTop={'4rem'}
+        // spacing={1}
         sx={{
+          // display: 'absolute',
+          height: '2rem',
+          bottom: 0,
+          width: '100%',
           backgroundColor: 'black',
           '&:hover': {
             backgroundColor: 'black',
