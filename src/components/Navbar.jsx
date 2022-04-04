@@ -47,10 +47,14 @@ const Navbar = () => {
             src="assets/img/logo2.png"
           />
           <Typography
-            variant="h6"
-            noWrap
+            variant="h3"
             component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex', color: 'black' } }}
+            noWrap
+            sx={{
+              display: { xs: 'none', md: 'flex', color: 'black' },
+              fontFamily: 'Babylonica, cursive',
+              lineHeight: 'unset',
+            }}
           >
             <Link href="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
               Osman Başkaya
@@ -106,15 +110,17 @@ const Navbar = () => {
           </Box>
 
           <Typography
-            variant="h6"
+            variant="h3"
             noWrap
             component="div"
             sx={{
               flexGrow: 1,
               display: { xs: 'flex', md: 'none', color: 'black' },
+              fontFamily: 'Babylonica, cursive',
+              lineHeight: 'unset',
             }}
           >
-            <Link href="/" sx={{ textDecoration: 'none' }}>
+            <Link href="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
               Osman Başkaya
             </Link>
           </Typography>
