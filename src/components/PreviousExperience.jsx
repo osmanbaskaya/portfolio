@@ -130,8 +130,8 @@ export default function PreviousExperience() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-            sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+            - Used Deep Learning to solve NLP problems such as Morphological
+            Disambiguation, Named Entity Recognition, Sentiment Analysis.
           </Typography>
         </AccordionDetails>
       </Accordion>

@@ -8,6 +8,7 @@ import {
   Paper,
   Typography,
 } from '@mui/material'
+import CircularProgress from '@mui/material/CircularProgress'
 import React, { useEffect, useState } from 'react'
 import PreviousExperience from '../components/PreviousExperience'
 
@@ -26,13 +27,58 @@ const hobbies = [
   'Philosophy',
 ]
 
+function showBooks(books) {
+  return (
+    <List
+      sx={{
+        width: '100%',
+        maxWidth: 360,
+        bgcolor: 'background.paper',
+        display: 'inline-block',
+      }}
+    >
+      {books.length !== 0 ? (
+        books.map((book) => (
+          <ListItem key={book.title}>
+            <ListItemText
+              primary={<Typography variant="h6">{book.title}</Typography>}
+              secondary={
+                <Typography variant="body1" sx={{ color: '#616161' }}>
+                  {book.author}
+                </Typography>
+              }
+              sx={{ textAlign: 'center' }}
+            />
+          </ListItem>
+        ))
+      ) : (
+        <CircularProgress />
+      )}
+    </List>
+  )
+}
+
+function listActivities(activities) {
+  return (
+    <Grid container spacing={1} justifyContent="center">
+      {activities.map((activity, index) => (
+        <Grid item key={index}>
+          <Chip
+            label={activity}
+            sx={{
+              fontSize: 'large',
+              fontFamily: 'inherit',
+            }}
+            variant="outlined"
+          />
+        </Grid>
+      ))}
+    </Grid>
+  )
+}
+
 export default function About() {
   const randomBooks = [
-    {
-      author: 'Patton, Jeff',
-      title:
-        'User Story Mapping: Discover the Whole Story, Build the Right Product',
-    },
     {
       author: 'Patton, Jeff',
       title:
@@ -53,7 +99,7 @@ export default function About() {
       .then((data) => {
         setBooks(data)
       })
-  }, [])
+  }, [books])
 
   useEffect(() => {
     fetch(goodreads_api + '?shelf=read&k=3')
@@ -61,7 +107,7 @@ export default function About() {
       .then((data) => {
         setReadBooks(data)
       })
-  }, [])
+  }, [readBooks])
 
   return (
     <Grid container spacing={4}>
@@ -121,108 +167,32 @@ export default function About() {
         </Paper>
       </Grid>
 
-      {/* <Divider
-        sx={{
-          borderWidth: '5',
-          borderColor: 'black',
-          marginTop: '2em',
-          marginBottom: '1em',
-        }}
-      ></Divider> */}
-
       <Grid item xs={12}>
         <PreviousExperience></PreviousExperience>
       </Grid>
-      {/* <Divider
-        sx={{
-          borderWidth: '5',
-          borderColor: 'black',
-          marginTop: '2em',
-          marginBottom: '1em',
-        }}
-      ></Divider> */}
+
       <Grid item xs={12} md={6}>
         <Typography variant="h4" mb={1} textAlign={'center'}>
           Stuff I Love
         </Typography>
 
-        <Grid container spacing={1} justifyContent="center">
-          {hobbies.map((hobby, index) => (
-            <Grid item key={index}>
-              <Chip
-                label={hobby}
-                sx={{
-                  fontSize: 'small',
-                }}
-                variant="outlined"
-              />
-            </Grid>
-          ))}
-        </Grid>
+        {listActivities(hobbies)}
       </Grid>
       <Grid item xs={12} md={6}>
         <Typography variant="h4" textAlign={'center'} mb={1}>
           Currently Learning
         </Typography>
-        <Grid container spacing={1} justifyContent="center">
-          {learning.map((hobby, index) => (
-            <Grid item key={index}>
-              <Chip
-                label={hobby}
-                sx={{
-                  fontSize: 'small',
-                  fontFamily: 'inherit',
-                }}
-                variant="outlined"
-              />
-            </Grid>
-          ))}
-        </Grid>
+        {listActivities(learning)}
       </Grid>
       <Grid item xs={12} md={6} mb={1} textAlign={'center'}>
         <Typography variant="h4" textAlign={'center'}>
           Books: Currently Reading
         </Typography>
-        <List
-          sx={{
-            width: '100%',
-            maxWidth: 360,
-            bgcolor: 'background.paper',
-            display: 'inline-block',
-          }}
-        >
-          {books.map((book) => (
-            <ListItem key={book.title}>
-              <ListItemText
-                primary={book.title}
-                secondary={book.author}
-                sx={{ textAlign: 'center' }}
-              />
-            </ListItem>
-          ))}
-        </List>
+        {showBooks(books)}
       </Grid>
       <Grid item xs={12} md={6} mb={1} textAlign={'center'}>
         <Typography variant="h4">Books: Recently finished</Typography>
-
-        <List
-          sx={{
-            width: '100%',
-            maxWidth: 360,
-            bgcolor: 'background.paper',
-            display: 'inline-block',
-          }}
-        >
-          {readBooks.map((book) => (
-            <ListItem key={book.title}>
-              <ListItemText
-                primary={book.title}
-                secondary={book.author}
-                sx={{ textAlign: 'center' }}
-              />
-            </ListItem>
-          ))}
-        </List>
+        {showBooks(readBooks)}
       </Grid>
     </Grid>
   )
