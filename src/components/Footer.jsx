@@ -8,7 +8,7 @@ export default function Footer() {
         // spacing={1}
         sx={{
           // display: 'absolute',
-          height: '2rem',
+          height: '3rem',
           bottom: 0,
           width: '100%',
           backgroundColor: 'black',
@@ -18,10 +18,11 @@ export default function Footer() {
           },
         }}
       >
-        <Grid container>
+        <Grid container alignItems={'center'} height="100%">
           <Grid item xs={12}>
-            <Typography variant={'body2'} align={'center'} color="white">
-              Osman Başkaya © 2021-{new Date().getFullYear()}
+            <Typography variant={'body1'} align={'center'} color="white">
+              © 2021-{new Date().getFullYear()} | Osman Başkaya | All Rights
+              Reserved.
             </Typography>
           </Grid>
         </Grid>
