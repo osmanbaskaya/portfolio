@@ -5,12 +5,14 @@ import ScrollToTop from './components/ScrollToTop'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
-
 import {
   ThemeProvider,
   createTheme,
   responsiveFontSizes,
 } from '@mui/material/styles'
+import GA4React from 'ga-4-react'
+
+const MEASUREMENT_ID = 'G-QL205X8RV5'
 
 let theme = createTheme({
   typography: {
@@ -37,6 +39,22 @@ theme = responsiveFontSizes(theme)
 
 export default class App extends Component {
   render() {
+    // let ga4react
+
+    // if (!GA4React.isInitialized() && MEASUREMENT_ID) {
+    //   ga4react = new GA4React(MEASUREMENT_ID)
+
+    //   ga4react.initialize().then(
+    //     (ga4) => {
+    //       console.log('success')
+    //       ga4.pageview(window.location.pathname)
+    //     },
+    //     (err) => {
+    //       console.error(err)
+    //     },
+    //   )
+    // }
+
     let routes = (
       <Routes>
         <Route path="/" element={<Home></Home>} />
