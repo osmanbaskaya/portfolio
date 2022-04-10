@@ -15,11 +15,11 @@ var pages = [
   { url: '/', text: 'Home' },
   { url: '#work', text: 'Work' },
   { url: '#research', text: 'Research' },
-  { url: 'http://osmanbaskaya.github.io/', text: 'Blog' },
   { url: '/about', text: 'About' },
-]
+  { url: '#contact', text: 'Contact' },
 
-// const pages = ['Home', 'Work', 'Research', 'Blog', 'About']
+  { url: 'http://osmanbaskaya.github.io/', text: 'Blog' },
+]
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null)

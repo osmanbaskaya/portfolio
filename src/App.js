@@ -10,9 +10,6 @@ import {
   createTheme,
   responsiveFontSizes,
 } from '@mui/material/styles'
-import GA4React from 'ga-4-react'
-
-const MEASUREMENT_ID = 'G-QL205X8RV5'
 
 let theme = createTheme({
   typography: {
