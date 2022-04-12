@@ -27,10 +27,7 @@ export default function PreviousExperience() {
           <Typography
             sx={{ width: '33%', flexShrink: 0, color: 'text.secondary' }}
           >
-            Engineering Manager
-          </Typography>
-          <Typography sx={{ width: '33%', flexShrink: 0, textAlign: 'end' }}>
-            June 21' - Present
+            Engineering Manager (June 21' - Present)
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -98,7 +95,7 @@ export default function PreviousExperience() {
             Seven Bridges Genomics
           </Typography>
           <Typography sx={{ color: 'text.secondary' }}>
-            Research Engineer
+            Research Engineer (Oct 16' - May 17')
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -125,7 +122,7 @@ export default function PreviousExperience() {
             Huawei Research
           </Typography>
           <Typography sx={{ color: 'text.secondary' }}>
-            Research Engineer
+            Research Engineer (Sept 15' - Aug 16')
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
