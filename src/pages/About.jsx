@@ -153,7 +153,7 @@ export default function About() {
             Autopilot, a conversational AI Platform, at Twilio. Previously, he
             was a Senior Machine Learning Engineer in the same company for 3
             years. Before than, he was a Research Engineer at Totient & Seven
-            Bridges Genomics in Boston, and Huawei Research in Istanbul.
+            Bridges Genomics in Boston, and Huawei Research in İstanbul .
           </Typography>
 
           <Typography variant="h6">
@@ -163,7 +163,7 @@ export default function About() {
             education by joining Artificial Intelligence Lab at Koç University,
             where he focused on Machine learning and Natural Language
             Processing. After getting his Master’s degree, Osman decided on a
-            career in the industry and worked in start-ups and big companies. In
+            career in the industry and worked at startups and big companies. In
             2016, he moved to the United States; first to Boston and then the
             Bay Area. Currently, he lives in San Francisco.
           </Typography>

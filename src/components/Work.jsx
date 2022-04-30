@@ -80,10 +80,10 @@ function Section(props) {
                   href="https://www.twilio.com/blog/introducing-twilio-autopilot-a-conversational-ai-platform-to-build-bots-that-work"
                   variant="h6"
                   sx={{ textDecoration: 'none' }}
-                  // color="green"
+                  color="green"
                   fontFamily="BIZ UDPMincho, serif"
                 >
-                  Learn More.
+                  Learn More
                 </Typography>
               </IconButton>
             </Stack>

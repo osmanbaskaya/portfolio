@@ -76,7 +76,7 @@ const Navbar = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon sx={{ color: 'black' }} />
+              <MenuIcon sx={{ color: 'green' }} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -101,7 +101,7 @@ const Navbar = () => {
                   href={page.url}
                   textAlign="center"
                   key={page.text}
-                  sx={{ textDecoration: 'none' }}
+                  sx={{ textDecoration: 'none', color: 'green' }}
                 >
                   <MenuItem onClick={handleCloseNavMenu}>{page.text}</MenuItem>
                 </Link>
@@ -120,7 +120,7 @@ const Navbar = () => {
               lineHeight: 'unset',
             }}
           >
-            <Link href="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link href="/" sx={{ textDecoration: 'none', color: 'green' }}>
               Osman Başkaya
             </Link>
           </Typography>
@@ -141,7 +141,7 @@ const Navbar = () => {
               >
                 <Typography
                   textAlign="center"
-                  color="black"
+                  color="green"
                   sx={{ textDecoration: 'none' }}
                 >
                   {page.text}
