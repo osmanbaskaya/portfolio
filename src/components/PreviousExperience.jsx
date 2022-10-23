@@ -32,14 +32,23 @@ export default function PreviousExperience() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            - Managing a team responsible for the Twilio Autopilot.
+            - Built a new team with a huge ambition to improve Twilio Autopilot,
+            created training materials for quick ramp-up and developed a
+            long-term vision and roadmap to mitigate the risks before moving to
+            the sunsetting stage of the product. The team has reduced the
+            incidents and on-call duties of the GA product by 80%.
           </Typography>
           <Typography>
-            - Leading organization-wide infrastructural modernization programs.
+            - Leading the End Of Life effort of Twilio Autopilot: owned the
+            whole process from planning to execution, collaborated effectively
+            with the leaders in the company from Product to Finance, PS to GTM,
+            Sales Enablement to Developer Experience, communicated with the
+            customers for a smooth migration.{' '}
           </Typography>
           <Typography>
-            - In addition to be an engineering manager, playing different roles
-            (Product Manager & Tech lead) within the team.
+            - Overseeing a team of software engineers and ML scientists
+            responsible for building a central ML platform for the company and
+            improving the state-of-the-art speech engine.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -54,18 +63,15 @@ export default function PreviousExperience() {
         >
           <Typography sx={{ width: '33%', flexShrink: 0 }}>Twilio</Typography>
           <Typography sx={{ color: 'text.secondary' }}>
-            Senior Machine Learning Engineer (July 18' - June 21')
+            Staff Machine Learning Engineer (July 18' - June 21')
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            - Designed and led Asset Manager Service that addresses the
-            lifecycle of audio and text assets at Twilio AI Team.
-          </Typography>
-          <Typography>
-            - Designed and built Transformer Service that runs on Kubernetes,
-            which can be used to train highly accurate and light models with a
-            few examples.
+            - Developed a rule-free, fully generalizable, T5-based
+            classify-extract-normalize model to recognize the receipt numbers
+            and improved the F1 score of the previous model by 35%, led a first
+            big customer to sign a contract.
           </Typography>
           <Typography>
             - Designed and built a Machine Learning Metadata service to address
@@ -74,11 +80,14 @@ export default function PreviousExperience() {
             environments in a reliable and traceable manner.
           </Typography>
           <Typography>
-            - Designed and built Data preparation Service for Autopilot.
+            - Designed and led Asset Manager Service that addresses the
+            lifecycle of audio and text assets at Twilio AI Team.
           </Typography>
+
           <Typography>
-            - Designed algorithms for Natural Language Understanding system used
-            in Twilio AutoPilot.
+            - Designed and built Transformer Service that runs on Kubernetes,
+            which can be used to train highly accurate and light models with a
+            few examples.
           </Typography>
         </AccordionDetails>
       </Accordion>

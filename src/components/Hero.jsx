@@ -62,7 +62,7 @@ export default function Hero() {
           <Box height={50} overflow={'hidden'} mb="1rem">
             <Box
               sx={{
-                animation: `${move} 4s infinite ease-in-out alternate`,
+                animation: `${move} 3s infinite ease-in-out alternate`,
               }}
               color={'green'}
               textAlign={'left'}

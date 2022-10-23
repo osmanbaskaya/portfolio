@@ -149,11 +149,12 @@ export default function About() {
           }}
         >
           <Typography variant="h6" marginBottom={2}>
-            Currently, Osman is managing a team that develops and maintains
-            Autopilot, a conversational AI Platform, at Twilio. Previously, he
-            was a Senior Machine Learning Engineer in the same company for 3
-            years. Before than, he was a Research Engineer at Totient & Seven
-            Bridges Genomics in Boston, and Huawei Research in İstanbul .
+            Currently, Osman is managing a team that builds a centralized
+            Machine Learning platform for Twilio, and leading sunsetting process
+            of Twilio Autopilot. Previously, he was a Senior Machine Learning
+            Engineer in the same company for 3 years. Before than, he was a
+            Research Engineer at Totient & Seven Bridges Genomics in Boston, and
+            Huawei Research in İstanbul .
           </Typography>
 
           <Typography variant="h6">
