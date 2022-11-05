@@ -14,6 +14,12 @@ import PreviousExperience from '../components/PreviousExperience'
 
 const goodreads_api =
   'https://goodreads-currently-reading-klxvdojwta-uc.a.run.app'
+
+// const notion_api = 'http://localhost:8080/api/v1/notion'
+
+const notion_api =
+  'https://nonvital-vital-signs-3etj3isdaq-uc.a.run.app/api/v1/notion'
+
 const learning = ['Français 🇫🇷', 'Tango Dancing 🕺🏻', 'Product Discovery 🧐']
 const hobbies = [
   'Tennis 🎾',
@@ -77,6 +83,46 @@ function listActivities(activities) {
   )
 }
 
+function showHighlights(data) {
+  return (
+    <List
+      sx={{
+        width: '100%',
+        bgcolor: 'background.paper',
+        display: 'inline-block',
+      }}
+    >
+      {data.length !== 0 ? (
+        data.map((highlight, index) => (
+          <ListItem key={index}>
+            <ListItemText
+              primary={
+                <Typography fontStyle="italic" variant="b1">
+                  "{highlight.content}"
+                </Typography>
+              }
+              secondary={
+                <Typography
+                  component="a"
+                  href={highlight.url}
+                  variant="body1"
+                  sx={{ color: '#616161' }}
+                >
+                  <br></br>
+                  {highlight.title}
+                </Typography>
+              }
+              sx={{ textAlign: 'center' }}
+            />
+          </ListItem>
+        ))
+      ) : (
+        <CircularProgress />
+      )}
+    </List>
+  )
+}
+
 export default function About() {
   const randomBooks = [
     {
@@ -93,6 +139,8 @@ export default function About() {
 
   const [books, setBooks] = useState([])
   const [readBooks, setReadBooks] = useState([])
+  const [highlights, setHighlights] = useState([])
+
   useEffect(() => {
     fetch(goodreads_api + '?shelf=currently-reading&k=3')
       .then((res) => res.json())
@@ -108,6 +156,14 @@ export default function About() {
         setReadBooks(data)
       })
   }, [readBooks])
+
+  useEffect(() => {
+    fetch(notion_api + '/last_highlights?limit=5')
+      .then((res) => res.json())
+      .then((data) => {
+        setHighlights(data['data']['highlights'])
+      })
+  }, [highlights])
 
   return (
     <Grid container spacing={4}>
@@ -197,6 +253,12 @@ export default function About() {
       <Grid item xs={12} md={6} mb={1} textAlign={'center'}>
         <Typography variant="h4">Books: Recently finished</Typography>
         {showBooks(readBooks)}
+      </Grid>
+      <Grid item xs={12} textAlign={'center'}>
+        <Typography variant="h4">
+          Recent highlights from the books and articles
+        </Typography>
+        {showHighlights(highlights)}
       </Grid>
     </Grid>
   )

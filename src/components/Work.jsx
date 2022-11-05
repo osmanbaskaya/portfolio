@@ -99,10 +99,9 @@ function Section(props) {
                 <Fingerprint />
 
                 <Typography
-                  // component="a"
+                  component="a"
                   href={props.url}
                   variant="h6"
-                  fontSize={'3rem'}
                   sx={{ textDecoration: 'none' }}
                   color="green"
                   // fontFamily="BIZ UDPMincho, serif"
