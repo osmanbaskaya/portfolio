@@ -128,7 +128,7 @@ export default function Work() {
         description="I manage a team of software engineers and ML scientists responsible for building a central
 ML platform for the company and improving its state-of-the-art speech engine."
         roles={['Engineering Manager', 'Machine Learning Platform']}
-        summary="A platform that harnesses Machine Learning and enables the teams withing the company from Twilio Voice to Flex to build more intelligent products."
+        summary="A platform that harnesses Machine Learning and enables the teams within the company from Twilio Voice to Flex to build more intelligent products."
       ></Section>
       {/* <Divider
         sx={{
