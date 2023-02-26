@@ -122,13 +122,12 @@ export default function Work() {
   return (
     <Box>
       <Section
-        title="Central AI Platform"
+        title="Central AI"
         short="Centralized Machine Learning"
         url="https://www.twilio.com/speech-recognition"
-        description="I manage a team of software engineers and ML scientists responsible for building a central
-ML platform for the company and improving its state-of-the-art speech engine."
+        description="I manage a team of software engineers and ML scientists responsible for helping other teams to apply Machine Learning to problems such as Speech Recognition, Spam/Phishing, Propensity to Buy, Send Time Optimization, and so on. "
         roles={['Engineering Manager', 'Machine Learning Platform']}
-        summary="A platform that harnesses Machine Learning and enables the teams within the company from Twilio Voice to Flex to build more intelligent products."
+        summary="A platform that harnesses Machine Learning and enables the teams within the company such as Twilio Voice, Flex, Consumer Trust, and Segment build more intelligent products."
       ></Section>
       {/* <Divider
         sx={{
@@ -138,6 +137,7 @@ ML platform for the company and improving its state-of-the-art speech engine."
           marginBottom: '1em',
         }}
       ></Divider> */}
+
       <Section
         title="Autopilot"
         short="Omnichannel AI assistant"

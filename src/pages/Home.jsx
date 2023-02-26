@@ -1,4 +1,4 @@
-import { Chip, Divider, Typography } from '@mui/material'
+import { Divider, Typography } from '@mui/material'
 import Articles from '../components/Articles'
 import Hero from '../components/Hero'
 import HomeDivider from '../components/HomeDivider'
