@@ -17,19 +17,29 @@ export default function Home() {
         }}
       ></Divider>
       <Typography variant="h5" fontStyle="italic">
-        I am an <strong> engineering leader </strong> who believes only
-        <strong> psychologically safe </strong> and{' '}
-        <strong> empathetic </strong>
-        teams can achieve their full potential.
+        As an <strong>engineering leader and a Machine Learning expert</strong>,
+        I'm driven by the limitless potential of technology to positively
+        transform our world. With years of experience in the academy and
+        industry, being part of and leading{' '}
+        <strong>cross-functional teams</strong>, I've developed a unique
+        perspective on leveraging machine learning to solve complex problems and
+        create innovative solutions that deliver <strong>incremental value to customers</strong>.
       </Typography>
       <Typography variant="h5" marginTop={2} fontStyle="italic">
-        I love growing and <strong> inspiring </strong> people, building
-        <strong> autonomous</strong> and <strong> high-performing </strong>
-        teams, and working with
-        <strong> cross-functional organizations</strong> to help define the
-        <strong> architecture, strategy, and roadmaps</strong> to ensure we
-        deliver <strong>incremental value</strong> and
-        <strong> exceptional</strong> products to the customers.
+        I'm passionate about developing and inspiring individuals to realize
+        their <strong>full potential and achieve exceptional results</strong>.
+        My focus on staying at the forefront of the latest advancements in
+        machine learning, combined with my ability to collaborate with diverse
+        teams, enables me to deliver <strong>cutting-edge products </strong>that
+        make a difference in people's lives.
+      </Typography>
+      <Typography variant="h5" marginTop={2} fontStyle="italic">
+        I have a decade of experience in Natural Language Processing and Machine
+        learning which helped me publish my research in venues like{' '}
+        <strong>
+          EACL, the Journal of Artificial Intelligence Research, and SemEval{' '}
+        </strong>
+        .
       </Typography>
       <HomeDivider id="work" label="MY WORK @ TWILIO"></HomeDivider>
       <Work></Work>
