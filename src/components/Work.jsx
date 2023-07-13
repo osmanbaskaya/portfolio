@@ -129,7 +129,7 @@ export default function Work() {
           short="Productivity app for tradespeople"
           logo="assets/img/hardhat-logo.png"
           altText="Twilio"
-          url="https://portfolio.baskaya.io/projects/hardhat/CodeLookup"
+          url="https://hardhat.imagination-ai.org"
           description="We have engaged in discussions with numerous electricians, plumbers, and HVAC professionals. Presently, we are diligently focusing on the development of our Minimum Viable Product."
           roles={["GenAI", "Productivity", "Tradespeople"]}
           summary="Hard Hat is a tradesperson productivity app to keep work moving. 
